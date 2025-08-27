@@ -282,6 +282,7 @@ body {
     align-items: center;
     animation: fadeInRight 1s ease-out 0.3s both;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .floating-card {
