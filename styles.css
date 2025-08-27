@@ -1057,6 +1057,11 @@ body {
 }
 
 @media (max-width: 480px) {
+
+        .hero-name {
+        margin-top: 10rem;
+    }
+
     .floating-card {
         transform: rotate(0deg);
     }
@@ -1084,9 +1089,7 @@ body {
 }
 
 @media (max-width: 480px) {
-    .hero-name {
-    margin-top: 30rem;
-  }
+    
 }
 
 /* Smooth scrolling y efectos adicionales */
