@@ -1083,6 +1083,12 @@ body {
     }
 }
 
+@media (max-width: 360px) {
+    .hero-name {
+    margin-top: 6rem;
+  }
+}
+
 /* Smooth scrolling y efectos adicionales */
 .fade-in {
     opacity: 0;
