@@ -281,6 +281,7 @@ body {
     justify-content: center;
     align-items: center;
     animation: fadeInRight 1s ease-out 0.3s both;
+    margin-top: 30px;
 }
 
 .floating-card {
@@ -964,6 +965,17 @@ body {
 }
 
 @media (max-width: 768px) {
+
+    .hero-container {
+    grid-template-columns: 1fr; /* una sola columna */
+    gap: 2rem; /* menos espacio entre elementos */
+    padding: 0 1rem; /* menos padding lateral */
+  }
+
+  .hero-name {
+    white-space: normal; /* permitir salto de línea en móvil */
+  }
+
     .container {
         padding: 0 1rem;
     }
