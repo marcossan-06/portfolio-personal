@@ -68,6 +68,18 @@ body {
     margin: 0 auto;
 }
 
+.testimonio {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    border-left: 4px solid #ccc;
+    padding-left: 1rem;
+    text-align: left;
+}
+
+
 /* Botones */
 .btn {
     display: inline-flex;
@@ -489,6 +501,7 @@ body {
 }
 
 /* Projects Section */
+
 .projects {
     padding: 8rem 0;
     background: var(--bg-primary);
