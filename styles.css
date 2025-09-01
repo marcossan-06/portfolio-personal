@@ -13,6 +13,7 @@
     --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
     --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
     --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.15);
+    --shadow-bottom: 0 20px 30px -8px rgba(0, 0, 0, 0.15);
     --gradient-primary: linear-gradient(135deg, #000000 0%, #333333 100%);
     --gradient-accent: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
     --border-radius: 12px;
@@ -177,6 +178,24 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+}
+
+/* Hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: #000000;
+    border-radius: 2px;
+    transition: all 0.4s ease;
 }
 
 .nav-link {
@@ -1276,17 +1295,32 @@ textarea:focus {
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        flex-direction: column;
-        background: var(--secondary-color);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: var(--shadow-medium);
-        padding: 2rem 0;
+    /* Mobile: menú oculto */
+    @media (max-width: 768px) {
+        .nav-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            flex-direction: column;
+            background: var(--bg-primary);
+            overflow: hidden;
+            transition: 1s;
+            max-height: 0;
+            /* cerrado */
+            opacity: 0;
+            pointer-events: none;
+            box-shadow: var(--shadow-bottom);
+            padding: 2rem 0;
+        }
+
+        /* Cuando está abierto */
+        .nav-menu.open {
+            max-height: 500px;
+            /* suficiente para mostrar todo */
+            opacity: 1;
+            pointer-events: auto;
+        }
     }
 
     .hamburger.active span:nth-child(2) {
@@ -1294,60 +1328,13 @@ textarea:focus {
     }
 
     .hamburger.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
     }
 
     .hamburger.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-}
-
-/* Mobile: menú oculto */
-@media (max-width: 768px) {
-    .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: #fff;
-        overflow: hidden;
-        transition: 0.3s;
-        max-height: 0;
-        /* cerrado */
-        opacity: 0;
-        pointer-events: none;
+        transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* Cuando está abierto */
-    .nav-menu.open {
-        max-height: 500px;
-        /* suficiente para mostrar todo */
-        opacity: 1;
-        pointer-events: auto;
-    }
-}
-
-/* Hamburguesa */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 20px;
-    cursor: pointer;
-}
-
-.hamburger span {
-    display: block;
-    height: 3px;
-    background: #000000;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-/* Mostrar hamburguesa en móvil */
-@media (max-width: 768px) {
     .hamburger {
         display: flex;
     }
