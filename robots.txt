@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://portfolio-personal-liart.vercel.app/sitemap.xml
