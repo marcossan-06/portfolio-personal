@@ -1,0 +1,139 @@
+@use '../base/variables';
+
+// About Section
+.about {
+  padding: 8rem 0;
+  background: variables.$bg-secondary;
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  .about-description {
+    font-size: 1.125rem;
+    color: variables.$text-secondary;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  // Skills Grid
+  .skills-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  .skill-item {
+    background: variables.$secondary;
+    border-radius: variables.$border-radius;
+    text-align: center;
+    box-shadow: variables.$shadow-light;
+    transition: variables.$transition;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 0.9rem;
+    position: relative;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: variables.$shadow-medium;
+    }
+
+    .skill-icon {
+      font-size: 2rem;
+      font-weight: 700;
+      color: variables.$accent;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 50%;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      opacity: 0.6;
+    }
+
+    .skill-level {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(20, 20, 20, 0.9);
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.3rem;
+      border-radius: 0 0 10px 10px;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    &:hover .skill-level {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    // Colores por nivel
+    &.nivel-basico { .skill-level { background: rgba(255, 99, 99, 0.9); } }
+    &.nivel-intermedio { .skill-level { background: rgba(255, 206, 86, 0.9); } }
+    &.nivel-avanzado { .skill-level { background: rgba(75, 192, 192, 0.9); } }
+  }
+}
+
+// Animaciones opcionales
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: variables.$transition-slow;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: variables.$transition-slow;
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: variables.$transition-slow;
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

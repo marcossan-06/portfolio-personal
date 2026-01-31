@@ -1,0 +1,119 @@
+@use '../base/variables';
+
+// Projects Section
+.projects {
+  padding: 8rem 0;
+  background: variables.$bg-primary;
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .project-card {
+    background: variables.$secondary;
+    border-radius: variables.$border-radius;
+    overflow: hidden;
+    box-shadow: variables.$shadow-light;
+    transition: variables.$transition;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: variables.$shadow-heavy;
+    }
+
+    .project-image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 250px;
+      width: 100%;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      .project-placeholder {
+        font-size: 4rem;
+        opacity: 0.7;
+      }
+
+      .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        opacity: 0;
+        transition: variables.$transition;
+
+        .project-link,
+        .project-code {
+          padding: 0.75rem 1.5rem;
+          background: variables.$secondary;
+          color: variables.$primary;
+          text-decoration: none;
+          border-radius: 6px;
+          font-weight: 500;
+          transition: variables.$transition;
+        }
+
+        .project-code {
+          background: transparent;
+          color: variables.$secondary;
+          border: 1px solid variables.$secondary;
+        }
+      }
+
+      &:hover .project-overlay {
+        opacity: 1;
+      }
+    }
+
+    .project-content {
+      padding: 2rem;
+
+      .project-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .project-description {
+        color: variables.$text-secondary;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .project-tech {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+
+        span {
+          padding: 0.25rem 0.75rem;
+          background: rgba(212, 175, 55, 0.1);
+          color: variables.$accent;
+          border-radius: 20px;
+          font-size: 0.875rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+// Estilo base principal
+@use 'variables';
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: variables.$text-primary;
+  background-color: variables.$bg-primary;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: variables.$gradient-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: variables.$text-secondary;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonio {
+    font-size: 1.125rem;
+    font-style: italic;
+    color: variables.$text-secondary;
+    max-width: 600px;
+    margin: 0 auto;
+    border-left: 4px solid #ccc;
+    padding-left: 1rem;
+    text-align: left;
+}
+

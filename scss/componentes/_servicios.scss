@@ -1,0 +1,114 @@
+// Services Section
+@use '../base/variables';
+
+.services {
+  padding: 8rem 0;
+  background: variables.$bg-secondary;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: variables.$secondary;
+  padding: 3rem 2rem;
+  border-radius: variables.$border-radius;
+  text-align: center;
+  box-shadow: variables.$shadow-light;
+  transition: variables.$transition;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: variables.$shadow-medium;
+}
+
+.service-card.featured {
+  background: variables.$primary;
+  color: variables.$secondary;
+  transform: scale(1.05);
+}
+
+.service-card.featured:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+
+.service-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: variables.$accent;
+  color: variables.$primary;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.service-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: variables.$accent;
+  margin-bottom: 2rem;
+}
+
+.service-card.featured .service-price {
+  color: variables.$accent;
+}
+
+.service-features {
+  list-style: none;
+  text-align: left;
+}
+
+.service-features li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.service-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: variables.$accent;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .service-card.featured {
+    transform: none;
+  }
+
+  .service-card.featured:hover {
+    transform: translateY(-5px);
+  }
+}
